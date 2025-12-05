@@ -1,44 +1,28 @@
-# 🦀 Proyecto Personal en Rust — Prácticas y Algoritmos
-
+# Desarrollo de software utilizando Rust
 ![Rust](https://img.shields.io/badge/Rust-1.x-orange?logo=rust)
 ![Status](https://img.shields.io/badge/status-en%20desarrollo-yellow)
 
-Este es mi repositorio personal de **prácticas en Rust**.  
-Está diseñado para estudiantes, autodidactas y entusiastas que quieran fortalecer sus conocimientos mediante implementaciones reales de **algoritmos**, **métodos numéricos** y **concurrencia**, todo dentro de una arquitectura **modular** y **escalable**.
+Este repositorio reune una serie de implementaciones en Rust orientadas al estudio práctico de algoritmos fundamentales, técnicas numéricas y modelos de concurrencia. El objetivo principal es construir un entorno claro y modular donde sea posible analizar cómo Rust resuelve problemas clásicos con un enfoque centrado en seguridad de la memoria, control explícito de recursos y rendimiento nativo.
 
----
+## 🔒 Antes de comenzar: *¿Por que elegir Rust?*
+Rust se destaca por su sistema de **ownership y borrowing**, que elimina problemas comunes como accesos inválidos, data races y fugas de memoria sin depender de un recolector de basura. Este proyecto utiliza estos principios para explorar la ejecución de algoritmos desde cero, analizar su comportamiento y comparar estrategias bajo un entorno seguro y predecible. 
 
-## 📂 Contenido Principal
+Además, la ausencia de *runtime y el compilador optimizado* permiten medir y estudiar implementaciones con una precisión cercana a lenguajes de bajo nivel.
 
-- **🌀 Algoritmos de Ordenamiento** — Implementaciones desde cero: burbuja, quicksort, mergesort, heapsort, selección, inserción, etc.
-- **📊 Métodos Numéricos** — Sistemas lineales, búsqueda de raíces, interpolación y regresión.
-- **⚙️ Módulos de Utilidades** — Funciones para formatear datos, manejar entrada y optimizar código.
-- **🖥 Menús Interactivos** — Para navegar entre categorías de algoritmos y métodos.
-- **⚡ Concurrencia y Paralelismo** — Ejemplos con `std::thread`, `Mutex`, `Arc`, y más.
+<br>
 
----
-
-## 🧰 Características Técnicas
-
-- **Rust moderno y seguro**: uso de propiedad, borrowing, lifetimes y tipos genéricos.
-- **Arquitectura modular**: separación por temas para fácil mantenimiento y escalabilidad.
-- **Manejo de errores idiomático** con `Result` y `Option`.
-- Amplio uso de **patrones de control** (`match`, `if let`, `loop`, `for`, `while`).
-- **Código documentado** y listo para ampliaciones.
-
----
-
-## 📁 Estructura del Proyecto
+# 🗂️ Arquitectura del proyecto
+La estructura del repositorio está diseñada para favorecer la extensibilidad. Cada área temática **—ordenamientos, métodos numéricos, concurrencia y utilidades—** se encuentra encapsulada en módulos independientes, permitiendo desarrollar nuevas técnicas, reemplazar algoritmos, agregar pruebas o evolucionar la arquitectura sin generar conflictos entre los componentes existentes. Esta organización también refleja la forma idiomática en que se estructuran proyectos de Rust de mediana a gran escala.
 
 ```bash
 src/
 ├── main.rs
-├── utils/                          # Funciones auxiliares
+├── utils/                          
 │   ├── format_arrays.rs
 │   ├── format_input.rs
 │   ├── format_space.rs
 │   └── mod.rs
-├── sorting_algorithms/             # Algoritmos de ordenamiento
+├── sorting_algorithms/             
 │   ├── menu.rs
 │   ├── sort_bubble.rs
 │   ├── sort_heap.rs
@@ -48,60 +32,90 @@ src/
 │   ├── sort_selection.rs
 │   ├── strategy.rs
 │   └── mod.rs
-├── numerical_methods/              # Métodos numéricos
+├── numerical_methods/              
 │   ├── interpolation_and_regression/
 │   ├── linear_systems/
 │   ├── root_finding/
 │   ├── menu.rs
 │   └── mod.rs
-└── concurrence/                    # Ejemplos de concurrencia
-    ├── example_semaphore_crossing.rs
-    ├── example_shared_counter.rs
-    ├── example_task_scheduler.rs
-    ├── menu.rs
-    └── mod.rs
-```
-
-## 🚀 Cómo compilar y ejecutar
-1. Compilar el proyecto:
-```bash
-    cargo build
-```
-
-2. Ejecutar el programa principal:
-```bash
-    cargo run
-```
-
-3. Ejecutar pruebas:
-```bash
-    cargo test
+├── concurrence/                    
+│   ├── example_semaphore_crossing.rs
+│   ├── example_shared_counter.rs
+│   ├── example_task_scheduler.rs
+│   ├── menu.rs
+│   └── mod.rs
+└── README.md                    
 ```
 
 
-## 🔧 ¿Por qué modularizar en Rust?
-La estructura modular en Rust permite separar lógicamente cada tema o algoritmo. Facilitar el testing y mantenimiento. Reutilizar funciones y estructuras. Mantener un código limpio y escalable. 
-Cada módulo tiene su propio archivo mod.rs o está declarado desde otro archivo raíz para permitir visibilidad y acceso desde main.rs.
+## 🦀 Propósito Técnico del Proyecto
 
-## 📌 Objetivos del proyecto
-Consolidar el aprendizaje de Rust mediante la práctica constante. Reforzar conceptos de algoritmos y estructuras de datos. Aprender a estructurar un proyecto real en Rust desde cero. Promover buenas prácticas y el uso idiomático del lenguaje.
+El proyecto busca ofrecer un entorno de experimentación donde se pueda:
+- Estudiar cómo Rust maneja memoria en algoritmos iterativos y recursivos.
 
-## 🧠 Ideas futuras
-- Implementación de estructuras como pilas, colas y árboles
-- Pruebas unitarias con `#[test]`
-- Documentación con `cargo doc`
-- Exploración de crates externos (como `ndarray`, `serde`, etc.)
-- Aprender y practicar **concurrencia** y **paralelismo** con:
-  - `std::thread` y `std::sync`
-  - Canales (`mpsc`)
-  - Condiciones de carrera y sincronización
-  - Uso de `Arc`, `Mutex`, `RwLock` para manejo seguro de memoria compartida
-  - Tareas asincrónicas con `async/await` y `tokio`
+- Explorar la relación entre estructuras de datos y el sistema de tipos.
 
+- Comprender técnicas numéricas implementadas desde cero sin dependencias externas.
 
-## 👨‍💻 Autor: Lucas Leonel Cejas
-Técnico Universitario en Programación Informática.
-Apasionado por el aprendizaje continuo, la mejora progresiva y el código bien estructurado.
+- Practicar modelos de concurrencia seguros mediante `Arc`, `Mutex`, `Threads` y comunicación entre tareas.
 
-### 📬 ¿Sugerencias o mejoras?
-¡Sos bienvenido a abrir un issue o enviar un pull request para colaborar!
+- Analizar rendimiento y estabilidad en implementaciones nativas.
+
+Este repositorio no persigue únicamente implementar soluciones conocidas, sino también mostrar cómo Rust permite construirlas de forma robusta, clara y sin ambigüedades técnicas.
+
+<br>
+
+# ⚙️ Configuración del Entorno de Desarrollo
+
+Rust debe instalarse mediante rustup, disponible para Linux, macOS y Windows. Puede descargarse desde la página oficial del lenguaje. Para ejecutar el proyecto es necesario contar con el toolchain oficial del lenguaje, que incluye:
+
+- **rustc:** compilador de Rust
+
+- **cargo:** herramienta de construcción, pruebas y manejo de dependencias
+
+- **rustup:** instalador y gestor de versiones de Rust
+
+Una vez instalado, el entorno dispondrá automáticamente de todo lo necesario para compilar, ejecutar y testear este proyecto. Con Rust instalado, los comandos principales son:
+
+| Comandos        | Descripcion                     |
+|-----------------|---------------------------------|
+| cargo build     | Compilar el proyecto            |
+| cargo run       | Ejecutar el programa principal  |
+| cargo test      | Ejecutar las pruebas integradas |
+
+**Nota:** Rust incorpora de forma nativa un sistema de testing, por lo que no se requieren librerías adicionales para validar el comportamiento del código.
+
+<br>
+
+# 💡  Descripción General de los Componentes
+Este repositorio sirve como un banco de pruebas y exploración de varios conceptos fundamentales de la informática, implementados con la filosofía de Rust: seguridad, concurrencia y rendimiento.
+
+### Algoritmos de ordenamiento:
+Incluyen versiones desde cero de quicksort, mergesort, heapsort, bubble sort y otros métodos fundamentales. Se prioriza la claridad, el análisis de complejidad y el uso de traits para estrategias de ordenamiento flexibles.
+
+### Métodos numéricos:
+Contiene rutinas para resolver sistemas lineales, calcular raíces, interpolar y realizar regresiones. Estas implementaciones exploran estabilidad numérica y manejo explícito de valores mediante el sistema de tipos de Rust.
+
+### Concurrencia:
+Ejemplos de sincronización, contadores compartidos, simulaciones y planificación simple de tareas. Se utilizan std::thread, Arc, Mutex y otros componentes para explorar el modelo de concurrencia sin data races.
+
+### Utilidades:
+Funciones auxiliares para formateo, entrada y manipulación de datos que permiten mantener la lógica principal limpia y enfocada.
+
+<br>
+
+# 🔜 Expansión y Líneas Futuras
+El proyecto está pensado para crecer. Las próximas ampliaciones incluyen:
+
+- Nuevas estructuras de datos (árboles, colas, grafos).
+
+- Benchmarks integrados mediante herramientas especializadas.
+
+- Implementaciones asincrónicas con async/await y tokio.
+
+- Más métodos numéricos y algoritmos avanzados.
+
+<br>
+
+# 🤝 Contribuciones
+El repositorio está abierto a mejoras, sugerencias o análisis de implementación. Se aceptan issues y pull requests orientados a extender, mejorar o refactorizar los módulos existentes.
